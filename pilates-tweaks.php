@@ -14,11 +14,12 @@ License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
 add_action('wp_footer', 'gyrotonic_disclaimer');
 function gyrotonic_disclaimer() {
-  $content = "";
-  if ( is_page('CONTACT')) {
-    $content = '<div id="gyrotonic_disclaimer"><span class="gyrotonic">GYROTONIC</span>, <span class="gyrotonic">GYROKINESIS</span>, <span class="gyrotonic">GYROTONIC EXPANSION SYSTEM</span> & <span class="gyrotonic">GYROTONER</span> are registered trademarks of the Gyrotonic Sales Corp, and are used with their permission.</div>';
-  } 
-  echo $content;
+	wp_reset_query();
+	$content = "";
+	if ( is_page('CONTACT')) {
+    	$content = '<div id="gyrotonic_disclaimer"><span class="gyrotonic">Gyrotonic</span>, <span class="gyrotonic">Gyrokinesis</span>, <span class="gyrotonic">Gyrotonic Expansion System</span> & <span class="gyrotonic">Gryotoner</span> are registered trademarks of the Gyrotonic Sales Corp, and are used with their permission.</div>';
+	} 
+  	echo $content;
 }
 
 add_action( 'wp_enqueue_scripts', 'add_pilates_css', 999 );
