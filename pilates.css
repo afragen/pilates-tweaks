@@ -3,7 +3,7 @@
 /* iPad [portrait + landscape] and iPhone [portrait + landscape] */
 @media only screen and (min-device-width: 320px) and (max-device-width: 1024px) {
 	aside#text-7 img, aside#text-8 { padding-left: 30px; } /* bio */
-	aside#text-9 img, aside#text-10 { padding-left: 15px; } /* gyrotonic */
+	aside#text-9 img, aside#text-9 iframe, aside#text-10 { padding-left: 15px; } /* gyrotonic */
 	aside#text-12 img, aside#text-14 { padding-left: 20px; } /* pilates-method */
 	
 	#secondary {
@@ -13,13 +13,11 @@
 	#return-address {
 		float: right;
 		font-size:0.8em;
-		margin-top: -6em;
-		margin-right: 9em;
+		margin-top: -63px;
+		margin-right: 120px;
 	}
 	#supplementary #second, #supplementary #first { margin-top: 3em; }
-
-	aside#text-9 iframe { padding-left: 15px; } /* gyrotonic movie */
-	body.page-id-21 .singular.page .hentry { padding-top: 20px; }
+	#logo-nav-box { padding-bottom: 2em; }
 }
 
 /* iPad [portrait + landscape] */
@@ -41,7 +39,7 @@
 }
 .gyrotonic:after { content:'\00ae'; }
 #gyrotonic_disclaimer {
-	padding: 10px 0;
+	padding: 10px
 	font-size:0.7em;
 	text-align: center;
 }
