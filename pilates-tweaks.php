@@ -4,7 +4,7 @@
 Plugin Name: Pilates Tweaks
 Plugin URI: 
 Description: This plugin adds iOS specific CSS and trademarking for Gyrotonics&reg;.
-Version: 0.1
+Version: 0.2
 Author: Andy Fragen
 Author URI: http://thefragens.com/blog/
 License: GNU General Public License v2
@@ -32,22 +32,23 @@ function add_pilates_css() {
 
 // GithubUpdater
 if ( is_admin() ) {
+	$repo = 'afragen/pilates-tweaks';
 	global $wp_version;
-	include_once( 'updater.php' );
-	$config = array(		
-		'slug' => plugin_basename(__FILE__),
-		'proper_folder_name' => dirname( plugin_basename(__FILE__) ),
-		'api_url' => 'https://api.github.com/repos/afragen/pilates-tweaks',
-		'raw_url' => 'https://raw.github.com/afragen/pilates-tweaks/master',
-		'github_url' => 'https://github.com/afragen/pilates-tweaks',
-		'zip_url' => 'https://github.com/afragen/pilates-tweaks/zipball/master',
-		'sslverify' => true,
-		'requires' => $wp_version,
-		'tested' => $wp_version,
-		'readme' => 'readme.txt'
-
-	);
-	new WPGitHubUpdater($config);
+	include_once( GTU_INCLUDES.'/updater.php' );
+		$config = array(
+			'slug' => plugin_basename( __FILE__ ),
+			'proper_folder_name' => 'pilates-tweaks',
+			'api_url' => 'https://api.github.com/repos/'.$repo,
+			'raw_url' => 'https://raw.github.com/'.$repo.'/master',
+			'github_url' => 'https://github.com/'.$repo,
+			'zip_url' => 'https://github.com/'.$repo.'/zipball/master',
+			'sslverify' => true,
+			'requires' => '3.0',
+			'tested' => '3.3',
+			'readme' => 'README.md',
+			'access_token' => '',
+		);
+	new WP_GitHub_Updater($config);
 }
 
 ?>
