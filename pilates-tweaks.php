@@ -2,7 +2,7 @@
 
 /*
 Plugin Name: Pilates Tweaks
-Plugin URI: 
+Plugin URI: https://github.com/afragen/pilates-tweaks
 Description: This plugin adds iOS specific CSS and trademarking for Gyrotonics&reg;.
 Version: 0.3
 Author: Andy Fragen
@@ -29,12 +29,11 @@ function add_pilates_css() {
 }
 
 
-
-// GithubUpdater
+//Load GithubUpdater
 if ( is_admin() ) {
 	$repo = 'afragen/pilates-tweaks';
 	global $wp_version;
-	include_once( GTU_INCLUDES.'/updater.php' );
+	include_once( dirname(__FILE__).'/updater/updater.php' );
 		$config = array(
 			'slug' => plugin_basename( __FILE__ ),
 			'proper_folder_name' => basename($repo),
@@ -45,10 +44,8 @@ if ( is_admin() ) {
 			'sslverify' => true,
 			'requires' => '3.0',
 			'tested' => '3.3',
-			'readme' => 'README.md',
+			'readme' => 'readme.txt',
 			'access_token' => '',
 		);
 	new WP_GitHub_Updater($config);
 }
-
-?>
